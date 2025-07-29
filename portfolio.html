@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - RCK DIGITEX</title>
+
+    <!-- Google Font & Tailwind -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Roboto", "sans-serif"],
+            },
+            colors: {
+              primary: "#7e22ce",
+              secondary: "#ec4899",
+              accent: "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <style>
+      .bg-sticky {
+        background: linear-gradient(to right, #000000, #0c0c0c, #000000);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .menubar-color {
+        color: rgb(255, 255, 255);
+      }
+
+      .active-filter {
+        background-color: #000000 !important;
+        color: #facc15 !important;
+      }
+
+      .shimmer {
+        background: linear-gradient(
+          90deg,
+          #f3f3f3 25%,
+          #e0e0e0 37%,
+          #f3f3f3 63%
+        );
+        background-size: 400% 100%;
+        animation: shimmer 1.4s ease infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -500px 0;
+        }
+        100% {
+          background-position: 500px 0;
+        }
+      }
+
+      .shimmer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .shimmer-card {
+        background-color: #fff;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .shimmer-image {
+        height: 180px;
+        width: 100%;
+      }
+
+      .shimmer-content {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .shimmer-line {
+        height: 14px;
+        width: 100%;
+        border-radius: 4px;
+      }
+
+      .shimmer-line.short {
+        width: 60%;
+      }
+
+      .flip-card {
+        perspective: 1000px;
+        width: 100%;
+        height: 208px; /* Same as h-52 */
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 1rem; /* rounded-2xl */
+        overflow: hidden;
+      }
+
+      .flip-card-front {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .flip-card-back {
+        background-color: rgb(224, 224, 224);
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <!-- ✅ Navbar -->
+    <header
+      class="bg-gradient-to-r from-black to-black text-white shadow-md sticky top-0 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="#" class="text-2xl font-bold text-[#ff1460]"
+              >PURVESH CHOUDHARY</a
+            >
+          </div>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex space-x-6 menubar-color">
+            <a href="#" class="hover:text-yellow-300 transition">Home</a>
+            <a
+              href="#portfolio-container"
+              class="hover:text-yellow-300 transition"
+              >Portfolio</a
+            >
+            <a href="#footer" class="hover:text-yellow-300 transition"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Mobile Button -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-black/90">
+        <a href="#" class="block py-2 text-white hover:text-yellow-300">Home</a>
+        <a
+          href="#portfolio-container"
+          class="block py-2 text-white hover:text-yellow-300"
+          >Portfolio</a
+        >
+        <a href="#footer" class="block py-2 text-white hover:text-yellow-300"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <!-- siding about us Section -->
+    <section
+      class="relative w-full h-screen overflow-hidden"
+      data-aos="fade-up"
+    >
+      <!-- BACKGROUND SLIDER -->
+      <div class="absolute inset-0 -z-10">
+        <div class="w-full h-3/2 overflow-hidden">
+          <div
+            id="portfolio-slider"
+            class="flex transition-transform duration-[3000ms] ease-in-out h-full w-[500%]"
+          >
+            <!-- Slide 1 -->
+            <div class="w-full h-full flex-shrink-0">
+              <img
+                src="Images/Projects/Project1_Bg.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Slide 2 -->
+            <div class="w-full h-full flex-shrink-0">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Slide 3 -->
+            <div class="w-full h-full flex-shrink-0">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Slide 4 -->
+            <div class="w-full h-full flex-shrink-0">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Slide 5 -->
+            <div class="w-full h-full flex-shrink-0">
+              <img
+                src="https://images.unsplash.com/photo-1602526219333-dfbc01e9e229?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Optional: dark overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
+
+      <!-- MAIN CONTENT ABOVE -->
+      <div class="text-center mt-4 px-4 relative z-10">
+        <!-- Banner & About -->
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row items-center">
+            <!-- <div class="md:w-1/2 bg-white rounded-lg shadow-lg p-10 text-left"> -->
+            <div class="md:w-1/2 p-4 text-left">
+              <h6 class="text-2xl font-bold text-white"></h6>
+              <h2 class="text-6xl font-bold text-white mb-4">
+                Hello, I'm
+                <span class="text-[#ff1460]"> Purvesh Choudhary </span>
+              </h2>
+              <h2 class="text-3xl font-bold text-white mb-4">Game Developer</h2>
+              <p class="text-white leading-relaxed mb-4 text-justify">
+                Welcome to RCK DIGITEX — your all-in-one partner for websites,
+                apps, content, and digital marketing. We help businesses of all
+                sizes build strong online identities through strategic design,
+                development, and digital campaigns. Our team of creators,
+                coders, and marketers is passionate about building user-first
+                solutions that drive results. Whether you need a stunning
+                portfolio, a powerful eCommerce platform, or viral content —
+                we’ve got you covered.
+              </p>
+              <button
+                class="inline-block px-6 py-2 text-sm font-medium text-black bg-white rounded-lg hover:text-black hover:bg-yellow-300 transition"
+              >
+                Download Resume
+              </button>
+            </div>
+
+            <div class="md:w-1/2 w-full">
+              <img
+                src="Images/ProfileImage.jpg"
+                alt="Banner"
+                class="rounded-lg w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JS Slider Logic -->
+      <script>
+        const slider = document.getElementById("portfolio-slider");
+        let currentSlide = 0;
+        const totalSlides = slider.children.length;
+
+        setInterval(() => {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }, 6000); // 3s view + 3s transition
+      </script>
+    </section>
+
+    <!-- Game Section-->
+    <section
+      class="relative w-full overflow-hidden text-black"
+      data-aos="fade-up"
+    >
+      <div
+        class="absolute inset-0 bg-[url('Images/Games/BG.png')] bg-cover bg-center bg-fixed z-0"
+      ></div>
+      <div class="absolute inset-0 bg-[#ff006dbd] z-0"></div>
+
+      <div class="relative z-10 bg-white py-12 px-4 text-center">
+        <h2 class="text-6xl font-bold mb-4">Games</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          We craft digital experiences that engage and convert—helping you build
+          your brand with design, technology, and marketing.
+        </p>
+      </div>
+
+      <!-- ✅ Content Cards Over Background -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 py-16">
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
+          <!-- Game Card -->
+          <div
+            class="group bg-white rounded-1xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-500"
+          >
+            <div class="relative">
+              <div class="w-full aspect-video overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/L7WEQVi-wCA?autoplay=1&mute=1&loop=1&playlist=L7WEQVi-wCA"
+                  class="w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-2xl font-bold text-[#ff1460] mb-2">Grome</h3>
+              <p class="text-gray-600 mb-4 text-sm">
+                A fast-paced indie action game built in Unity featuring stylized
+                graphics and immersive gameplay.
+              </p>
+              <h4 class="text-md font-semibold text-[#ff1460] mb-1">
+                Technology / Skills
+              </h4>
+              <p class="text-gray-700 text-sm mb-4">Unity, C#, Photoshop</p>
+              <a
+                href="Projects/project1.html"
+                target="_blank"
+                class="inline-block px-5 py-2 text-sm bg-[#ff1460] text-white font-semibold rounded-full border hover:bg-black hover:text-[#ff1460] transition duration-300"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div
+            class="group bg-white rounded-1xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-500"
+          >
+            <div class="relative">
+              <div class="w-full aspect-video overflow-hidden">
+                <img
+                  src="Images/Games/Mars_Revive/ (1).png"
+                  alt="Grome Game Preview"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-2xl font-bold text-[#ff1460] mb-2">Mars Revive</h3>
+              <p class="text-gray-600 mb-4 text-sm">
+                A fast-paced indie action game built in Unity featuring stylized
+                graphics and immersive gameplay.
+              </p>
+              <h4 class="text-md font-semibold text-[#ff1460] mb-1">
+                Technology / Skills
+              </h4>
+              <p class="text-gray-700 text-sm mb-4">Unity, C#, Photoshop</p>
+              <a
+                href="Projects/project1.html"
+                target="_blank"
+                class="inline-block px-5 py-2 text-sm bg-[#ff1460] text-white font-semibold rounded-full border hover:bg-black hover:text-[#ff1460] transition duration-300"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div
+            class="group bg-white rounded-1xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-500"
+          >
+            <div class="relative">
+              <div class="w-full aspect-video overflow-hidden">
+                <img
+                  src="Images/Games/Mars_Revive/ (1).png"
+                  alt="Grome Game Preview"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-2xl font-bold text-[#ff1460] mb-2">Mars Revive</h3>
+              <p class="text-gray-600 mb-4 text-sm">
+                A fast-paced indie action game built in Unity featuring stylized
+                graphics and immersive gameplay.
+              </p>
+              <h4 class="text-md font-semibold text-[#ff1460] mb-1">
+                Technology / Skills
+              </h4>
+              <p class="text-gray-700 text-sm mb-4">Unity, C#, Photoshop</p>
+              <a
+                href="Projects/project1.html"
+                target="_blank"
+                class="inline-block px-5 py-2 text-sm bg-[#ff1460] text-white font-semibold rounded-full border hover:bg-black hover:text-[#ff1460] transition duration-300"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div
+            class="group bg-white rounded-1xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-500"
+          >
+            <div class="relative">
+              <div class="w-full aspect-video overflow-hidden">
+                <img
+                  src="Images/Games/Mars_Revive/ (1).png"
+                  alt="Grome Game Preview"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-2xl font-bold text-[#ff1460] mb-2">Mars Revive</h3>
+              <p class="text-gray-600 mb-4 text-sm">
+                A fast-paced indie action game built in Unity featuring stylized
+                graphics and immersive gameplay.
+              </p>
+              <h4 class="text-md font-semibold text-[#ff1460] mb-1">
+                Technology / Skills
+              </h4>
+              <p class="text-gray-700 text-sm mb-4">Unity, C#, Photoshop</p>
+              <a
+                href="Projects/project1.html"
+                target="_blank"
+                class="inline-block px-5 py-2 text-sm bg-[#ff1460] text-white font-semibold rounded-full border hover:bg-black hover:text-[#ff1460] transition duration-300"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div
+            class="group bg-white rounded-1xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-500"
+          >
+            <div class="relative">
+              <div class="w-full aspect-video overflow-hidden">
+                <img
+                  src="Images/Games/Mars_Revive/ (1).png"
+                  alt="Grome Game Preview"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-2xl font-bold text-[#ff1460] mb-2">Mars Revive</h3>
+              <p class="text-gray-600 mb-4 text-sm">
+                A fast-paced indie action game built in Unity featuring stylized
+                graphics and immersive gameplay.
+              </p>
+              <h4 class="text-md font-semibold text-[#ff1460] mb-1">
+                Technology / Skills
+              </h4>
+              <p class="text-gray-700 text-sm mb-4">Unity, C#, Photoshop</p>
+              <a
+                href="Projects/project1.html"
+                target="_blank"
+                class="inline-block px-5 py-2 text-sm bg-[#ff1460] text-white font-semibold rounded-full border hover:bg-black hover:text-[#ff1460] transition duration-300"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div
+            class="group bg-white rounded-1xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-500"
+          >
+            <div class="relative">
+              <div class="w-full aspect-video overflow-hidden">
+                <img
+                  src="Images/Games/Mars_Revive/ (1).png"
+                  alt="Grome Game Preview"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-2xl font-bold text-[#ff1460] mb-2">Mars Revive</h3>
+              <p class="text-gray-600 mb-4 text-sm">
+                A fast-paced indie action game built in Unity featuring stylized
+                graphics and immersive gameplay.
+              </p>
+              <h4 class="text-md font-semibold text-[#ff1460] mb-1">
+                Technology / Skills
+              </h4>
+              <p class="text-gray-700 text-sm mb-4">Unity, C#, Photoshop</p>
+              <a
+                href="Projects/project1.html"
+                target="_blank"
+                class="inline-block px-5 py-2 text-sm bg-[#ff1460] text-white font-semibold rounded-full border hover:bg-black hover:text-[#ff1460] transition duration-300"
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3d Section -->
+    <section data-aos="fade-up" class="mt-8">
+      <h2 class="text-6xl font-bold text-center text-black mb-4">3D Works</h2>
+      <p class="text-gray-600 text-lg text-center mb-10 max-w-3xl mx-auto">
+        Discover our best designs and developments
+      </p>
+
+      <div id="portfolio-container" class="max-w-7xl mx-auto text-center">
+        <div
+          class="portfolio-card websites grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10"
+        >
+          <!-- 3D Card -->
+          <div
+            class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col"
+          >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="Images/3D/(1).png"
+                    alt="Website Screenshot"
+                    class="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <button
+                    onclick="openModal('https://drive.google.com/thumbnail?id=YOUR_IMAGE_ID1')"
+                    class="text-sm px-4 py-2 rounded bg-yellow-300 text-black hover:bg-black hover:text-yellow-300 transition font-medium"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3D Card -->
+          <div
+            class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col"
+          >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="Images/3D/(2).png"
+                    alt="Website Screenshot"
+                    class="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <button
+                    onclick="openModal('https://drive.google.com/thumbnail?id=YOUR_IMAGE_ID1')"
+                    class="text-sm px-4 py-2 rounded bg-yellow-300 text-black hover:bg-black hover:text-yellow-300 transition font-medium"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3D Card -->
+          <div
+            class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col"
+          >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="Images/3D/(3).png"
+                    alt="Website Screenshot"
+                    class="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <button
+                    onclick="openModal('https://drive.google.com/thumbnail?id=YOUR_IMAGE_ID1')"
+                    class="text-sm px-4 py-2 rounded bg-yellow-300 text-black hover:bg-black hover:text-yellow-300 transition font-medium"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3D Card -->
+          <div
+            class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col"
+          >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="Images/3D/(4).png"
+                    alt="Website Screenshot"
+                    class="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <button
+                    onclick="openModal('https://drive.google.com/thumbnail?id=YOUR_IMAGE_ID1')"
+                    class="text-sm px-4 py-2 rounded bg-yellow-300 text-black hover:bg-black hover:text-yellow-300 transition font-medium"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3D Card -->
+          <div
+            class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col"
+          >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="Images/3D/(5).png"
+                    alt="Website Screenshot"
+                    class="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <button
+                    onclick="openModal('https://drive.google.com/thumbnail?id=YOUR_IMAGE_ID1')"
+                    class="text-sm px-4 py-2 rounded bg-yellow-300 text-black hover:bg-black hover:text-yellow-300 transition font-medium"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3D Card -->
+          <div
+            class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col"
+          >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="Images/3D/(6).png"
+                    alt="Website Screenshot"
+                    class="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <button
+                    onclick="openModal('https://drive.google.com/thumbnail?id=YOUR_IMAGE_ID1')"
+                    class="text-sm px-4 py-2 rounded bg-yellow-300 text-black hover:bg-black hover:text-yellow-300 transition font-medium"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3D Card -->
+          <div
+            class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col"
+          >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="Images/3D/(7).png"
+                    alt="Website Screenshot"
+                    class="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <button
+                    onclick="openModal('https://drive.google.com/thumbnail?id=YOUR_IMAGE_ID1')"
+                    class="text-sm px-4 py-2 rounded bg-yellow-300 text-black hover:bg-black hover:text-yellow-300 transition font-medium"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center"
+    >
+      <div
+        class="relative max-w-5xl w-full mx-4 bg-white rounded-lg overflow-hidden shadow-lg"
+      >
+        <button
+          id="closeModal"
+          class="absolute top-2 right-2 text-white bg-black hover:bg-red-600 rounded-full w-8 h-8 flex items-center justify-center z-50 transition"
+        >
+          &times;
+        </button>
+        <img
+          id="modalImage"
+          src=""
+          alt="Preview"
+          class="w-full h-auto object-contain max-h-[80vh]"
+        />
+      </div>
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer
+      class="bg-gradient-to-t from-[#890078] to-[#ff1460] text-white pt-12 pb-8 px-4"
+      id="footer"
+    >
+      <div class="max-w-7xl mx-auto text-center">
+        <!-- Social Media -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Follow Us</h3>
+          <div class="flex justify-center space-x-4">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="hover:text-yellow-300"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png"
+                alt="Instagram"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="hover:text-yellow-300"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png"
+                alt="Facebook"
+              />
+            </a>
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              class="hover:text-yellow-300"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png"
+                alt="WhatsApp"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/your-profile"
+              target="_blank"
+              class="hover:text-yellow-300"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png"
+                alt="LinkedIn"
+              />
+            </a>
+          </div>
+          <a
+            href="mailto:purveshchoudhary99@gmail.com"
+            class="hover:text-yellow-300"
+          >
+            <p class="mt-3">purveshchoudhary99@gmail.com</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center text-sm text-white/70">
+        &copy; 2025 RCK DIGITEX. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="include.js"></script>
+    <script>
+      function showShimmer() {
+        const container = document.getElementById("portfolio-container");
+        container.innerHTML = "";
+
+        const grid = document.createElement("div");
+        grid.className = "shimmer-grid";
+
+        for (let i = 0; i < 8; i++) {
+          const card = document.createElement("div");
+          card.className = "shimmer-card";
+
+          const img = document.createElement("div");
+          img.className = "shimmer shimmer-image";
+
+          const content = document.createElement("div");
+          content.className = "shimmer-content";
+
+          const line1 = document.createElement("div");
+          line1.className = "shimmer shimmer-line";
+
+          const line2 = document.createElement("div");
+          line2.className = "shimmer shimmer-line short";
+
+          content.appendChild(line1);
+          content.appendChild(line2);
+
+          card.appendChild(img);
+          card.appendChild(content);
+
+          grid.appendChild(card);
+        }
+
+        container.appendChild(grid);
+      }
+
+      function hideShimmer() {
+        const container = document.getElementById("portfolio-container");
+        container.innerHTML = "";
+      }
+    </script>
+    <script>
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      const closeModalBtn = document.getElementById("closeModal");
+
+      function openModal(imageUrl) {
+        modalImage.src = imageUrl;
+        modal.classList.remove("hidden");
+      }
+
+      closeModalBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        modalImage.src = "";
+      });
+
+      // Close on background click
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+          modalImage.src = "";
+        }
+      });
+
+      // Mobile menu toggle
+      document.getElementById("menu-btn").addEventListener("click", () => {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
