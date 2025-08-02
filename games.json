@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Mars Revive",
+    "desc": "One Soldier. One Mission. Total Domination. Wave-based shooter.",
+    "genre": "Action • Solo Dev",
+    "color": "yellow-400",
+    "hoverColor": "yellow-300",
+    "shadowColor": "yellow-500/20",
+    "image1": "Images/Games/Mars_Revive/ (1).png",
+    "image2": "Images/Games/Mars_Revive/ (2).png",
+    "link": "https://gamedevpurvesh.itch.io/mars-revive"
+  },
+  {
+    "title": "Shady Apartment",
+    "desc": "An eerie logic puzzle set in a haunted apartment. Creepy vibes guaranteed.",
+    "genre": "Puzzle • Solo Dev",
+    "color": "purple-400",
+    "hoverColor": "purple-300",
+    "shadowColor": "purple-500/20",
+    "image1": "Images/Games/Shady_Apartment/ (1).png",
+    "image2": "Images/Games/Shady_Apartment/ (2).png",
+    "link": "https://gamedevpurvesh.itch.io/shady-apartment"
+  },
+  {
+    "title": "Patrac",
+    "desc": "Speed through minimalist neon tracks in this time-attack racing challenge.",
+    "genre": "Racing • Solo Dev",
+    "color": "cyan-400",
+    "hoverColor": "cyan-300",
+    "shadowColor": "cyan-500/20",
+    "image1": "Images/Games/Patrac/ (1).png",
+    "image2": "Images/Games/Patrac/ (2).png",
+    "link": "https://gamedevpurvesh.itch.io/patrac"
+  }
+]

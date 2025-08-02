@@ -1,278 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Purvesh Choudhary | Unity Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Global Theme Variables -->
     <style>
-        :root {
-            --primary-color: #facc15;
-            /* yellow-400 */
-            --secondary-color: #000000;
-            --text-light: #ffffff;
-            --text-dark: #000000;
-            --bg-light: #f7f7f7;
-            --bg-dark: #1f2937;
-        }
+      :root {
+        --primary-color: #facc15;
+        /* yellow-400 */
+        --secondary-color: #000000;
+        --text-light: #ffffff;
+        --text-dark: #000000;
+        --bg-light: #f7f7f7;
+        --bg-dark: #1f2937;
+      }
 
-        .bg-primary {
-            background-color: var(--primary-color);
-        }
+      .bg-primary {
+        background-color: var(--primary-color);
+      }
 
-        .bg-secondary {
-            background-color: var(--secondary-color);
-        }
+      .bg-secondary {
+        background-color: var(--secondary-color);
+      }
 
-        .bg-light {
-            background-color: var(--bg-light);
-        }
+      .bg-light {
+        background-color: var(--bg-light);
+      }
 
-        .bg-dark {
-            background-color: var(--bg-dark);
-        }
+      .bg-dark {
+        background-color: var(--bg-dark);
+      }
 
-        .text-primary {
-            color: var(--primary-color);
-        }
+      .text-primary {
+        color: var(--primary-color);
+      }
 
-        .text-dark {
-            color: var(--text-dark);
-        }
+      .text-dark {
+        color: var(--text-dark);
+      }
 
-        .text-light {
-            color: var(--text-light);
-        }
+      .text-light {
+        color: var(--text-light);
+      }
 
-        .border-primary {
-            border-color: var(--primary-color);
-        }
+      .border-primary {
+        border-color: var(--primary-color);
+      }
 
-        .hover\:bg-primary:hover {
-            background-color: var(--primary-color);
-        }
+      .hover\:bg-primary:hover {
+        background-color: var(--primary-color);
+      }
 
-        .hover\:bg-secondary:hover {
-            background-color: var(--secondary-color);
-        }
+      .hover\:bg-secondary:hover {
+        background-color: var(--secondary-color);
+      }
 
-        .hover\:text-primary:hover {
-            color: var(--primary-color);
-        }
+      .hover\:text-primary:hover {
+        color: var(--primary-color);
+      }
 
-        .hover\:text-dark:hover {
-            color: var(--text-dark);
-        }
+      .hover\:text-dark:hover {
+        color: var(--text-dark);
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-light text-dark">
+  <body class="bg-light text-dark">
     <!-- Hero Section -->
-    <section class="h-screen bg-secondary text-light flex flex-col justify-center items-center text-center px-4">
-        <img src="Images/Profile.jpg" alt="Purvesh Choudhary"
-            class="w-60 h-60 rounded-full object-cover mb-6 border-4 border-primary shadow-lg" />
-        <h1 class="text-5xl md:text-7xl font-bold mb-4">Purvesh Choudhary</h1>
-        <p class="text-xl md:text-2xl mb-6">
-            Game Developer | 3D Artist | UI Designer
-        </p>
-        <div class="space-x-4">
-            <a href="#games"
-                class="bg-primary text-dark px-6 py-2 rounded hover:bg-secondary hover:text-primary transition">🎮 View
-                My Games</a>
-            <a href="#contact"
-                class="border border-primary px-6 py-2 rounded hover:bg-primary hover:text-dark transition">📩 Hire
-                Me</a>
-        </div>
+    <section
+      class="h-screen bg-secondary text-light flex flex-col justify-center items-center text-center px-4"
+    >
+      <img
+        src="Images/Profile.jpg"
+        alt="Purvesh Choudhary"
+        class="w-60 h-60 rounded-full object-cover mb-6 border-4 border-primary shadow-lg"
+      />
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">Purvesh Choudhary</h1>
+      <p class="text-xl md:text-2xl mb-6">
+        Game Developer | 3D Artist | UI Designer
+      </p>
+      <div class="space-x-4">
+        <a
+          href="#games"
+          class="bg-primary text-dark px-6 py-2 rounded hover:bg-secondary hover:text-primary transition"
+          >🎮 View My Games</a
+        >
+        <a
+          href="#contact"
+          class="border border-primary px-6 py-2 rounded hover:bg-primary hover:text-dark transition"
+          >📩 Hire Me</a
+        >
+      </div>
     </section>
 
     <!-- About Section -->
     <section class="py-16 bg-white" id="about">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-4">About Me</h2>
-            <p class="text-lg text-gray-700">
-                I'm a Unity Developer with a passion for creating immersive games,
-                designing engaging UI, and building beautiful 3D art. I started my
-                journey with Blender and evolved into full game development. I love
-                storytelling through code and pixels.
-            </p>
-        </div>
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-4">About Me</h2>
+        <p class="text-lg text-gray-700">
+          I'm a Unity Developer with a passion for creating immersive games,
+          designing engaging UI, and building beautiful 3D art. I started my
+          journey with Blender and evolved into full game development. I love
+          storytelling through code and pixels.
+        </p>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section class="py-16 bg-gray-100" id="skills">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10">Skills & Tools</h2>
-            <div class="flex flex-wrap justify-center items-center gap-6">
-                <!-- Unity -->
-                <div class="flex flex-col items-center w-20">
-                    <img src="https://img.icons8.com/color/48/unity.png" alt="Unity" class="w-10 h-10 mb-1" />
-                    <span class="text-sm text-center">Unity</span>
-                </div>
-                <!-- Blender -->
-                <div class="flex flex-col items-center w-20">
-                    <img src="https://img.icons8.com/color/48/blender-3d.png" alt="Blender" class="w-10 h-10 mb-1" />
-                    <span class="text-sm text-center">Blender</span>
-                </div>
-                <!-- C# -->
-                <div class="flex flex-col items-center w-20">
-                    <img src="https://img.icons8.com/color/48/c-sharp-logo.png" alt="C#" class="w-10 h-10 mb-1" />
-                    <span class="text-sm text-center">C#</span>
-                </div>
-                <!-- Photoshop -->
-                <div class="flex flex-col items-center w-20">
-                    <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop"
-                        class="w-10 h-10 mb-1" />
-                    <span class="text-sm text-center">Photoshop</span>
-                </div>
-                <!-- Figma -->
-                <!-- <div class="flex flex-col items-center w-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-10">Skills & Tools</h2>
+        <div class="flex flex-wrap justify-center items-center gap-6">
+          <!-- Unity -->
+          <div class="flex flex-col items-center w-20">
+            <img
+              src="https://img.icons8.com/color/48/unity.png"
+              alt="Unity"
+              class="w-10 h-10 mb-1"
+            />
+            <span class="text-sm text-center">Unity</span>
+          </div>
+          <!-- Blender -->
+          <div class="flex flex-col items-center w-20">
+            <img
+              src="https://img.icons8.com/color/48/blender-3d.png"
+              alt="Blender"
+              class="w-10 h-10 mb-1"
+            />
+            <span class="text-sm text-center">Blender</span>
+          </div>
+          <!-- C# -->
+          <div class="flex flex-col items-center w-20">
+            <img
+              src="https://img.icons8.com/color/48/c-sharp-logo.png"
+              alt="C#"
+              class="w-10 h-10 mb-1"
+            />
+            <span class="text-sm text-center">C#</span>
+          </div>
+          <!-- Photoshop -->
+          <div class="flex flex-col items-center w-20">
+            <img
+              src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"
+              alt="Photoshop"
+              class="w-10 h-10 mb-1"
+            />
+            <span class="text-sm text-center">Photoshop</span>
+          </div>
+          <!-- Figma -->
+          <!-- <div class="flex flex-col items-center w-20">
         <img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma" class="w-10 h-10 mb-1" />
         <span class="text-sm text-center">Figma</span>
       </div> -->
-                <!-- HTML -->
-                <div class="flex flex-col items-center w-20">
-                    <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML" class="w-10 h-10 mb-1" />
-                    <span class="text-sm text-center">HTML</span>
-                </div>
-                <!-- CSS -->
-                <div class="flex flex-col items-center w-20">
-                    <img src="https://img.icons8.com/color/48/css3.png" alt="CSS" class="w-10 h-10 mb-1" />
-                    <span class="text-sm text-center">CSS</span>
-                </div>
-                <!-- JavaScript -->
-                <div class="flex flex-col items-center w-20">
-                    <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"
-                        class="w-10 h-10 mb-1" />
-                    <span class="text-sm text-center">JavaScript</span>
-                </div>
-                <!-- Git -->
-                <div class="flex flex-col items-center w-20">
-                    <img src="https://img.icons8.com/color/48/git.png" alt="Git" class="w-10 h-10 mb-1" />
-                    <span class="text-sm text-center">Git</span>
-                </div>
-            </div>
+          <!-- HTML -->
+          <div class="flex flex-col items-center w-20">
+            <img
+              src="https://img.icons8.com/color/48/html-5--v1.png"
+              alt="HTML"
+              class="w-10 h-10 mb-1"
+            />
+            <span class="text-sm text-center">HTML</span>
+          </div>
+          <!-- CSS -->
+          <div class="flex flex-col items-center w-20">
+            <img
+              src="https://img.icons8.com/color/48/css3.png"
+              alt="CSS"
+              class="w-10 h-10 mb-1"
+            />
+            <span class="text-sm text-center">CSS</span>
+          </div>
+          <!-- JavaScript -->
+          <div class="flex flex-col items-center w-20">
+            <img
+              src="https://img.icons8.com/color/48/javascript--v1.png"
+              alt="JavaScript"
+              class="w-10 h-10 mb-1"
+            />
+            <span class="text-sm text-center">JavaScript</span>
+          </div>
+          <!-- Git -->
+          <div class="flex flex-col items-center w-20">
+            <img
+              src="https://img.icons8.com/color/48/git.png"
+              alt="Git"
+              class="w-10 h-10 mb-1"
+            />
+            <span class="text-sm text-center">Git</span>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Game Projects Section -->
     <section class="py-16 bg-white" id="games">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10">Game Projects</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-light p-4 rounded-xl shadow">
-                    <img src="Images/Games/sample-game.png" alt="Game Screenshot" class="rounded-md mb-4" />
-                    <h3 class="text-xl font-semibold mb-2">Chicken of the Wild</h3>
-                    <p class="text-sm text-gray-600">
-                        A stealth-comedy escape game made in 7 days. Full of feathers and
-                        chaos.
-                    </p>
-                    <a href="#" class="text-primary hover:underline mt-2 inline-block">▶️ Play Now</a>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-10 text-gray-900">
+          🎮 Game Projects
+        </h2>
+        <div
+          id="gamesContainer"
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        ></div>
+        <div class="mt-12 text-center">
+          <a
+            href="https://gamedevpurvesh.itch.io/"
+            target="_blank"
+            class="inline-block bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-800 transition"
+            >View All Games</a
+          >
         </div>
+      </div>
     </section>
 
     <!-- 3D Art Gallery -->
     <section class="py-16 bg-light" id="gallery">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10">3D Works</h2>
-            <div id="threeDGallery" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- JS injects cards -->
-            </div>
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-10">3D Works</h2>
+        <div
+          id="threeDGallery"
+          class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <!-- JS injects cards -->
         </div>
+      </div>
     </section>
 
     <!-- Game UI & Animation -->
     <section class="py-16 bg-white" id="ui-animation">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10">
-                Game UI & Animation
-            </h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-light p-4 rounded-xl shadow">
-                    <img src="Images/UI/ui-sample.png" alt="UI Screenshot" class="rounded-md mb-2" />
-                    <p class="text-sm text-gray-600">
-                        Inventory UI design for a pixel RPG.
-                    </p>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-10">
+          Game UI & Animation
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-light p-4 rounded-xl shadow">
+            <img
+              src="Images/UI/ui-sample.png"
+              alt="UI Screenshot"
+              class="rounded-md mb-2"
+            />
+            <p class="text-sm text-gray-600">
+              Inventory UI design for a pixel RPG.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
+
+    <!-- Game UI Gallery -->
+<section class="py-16 bg-gray-100" id="ui-gallery">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-10">Game UI & UX Designs</h2>
+    <div id="uiGallery" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- JS Injected Cards -->
+    </div>
+  </div>
+</section>
+
 
     <!-- Contact Section -->
     <section class="py-16 bg-black text-white" id="contact">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-10">Let's Connect</h2>
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-10">Let's Connect</h2>
 
-            <!-- Social Icons -->
-            <div class="flex justify-center flex-wrap gap-8 mb-10">
-                <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" aria-label="LinkedIn" class="group">
-                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-600">
-                        <img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn" />
-                    </div>
-                </a>
-
-                <a href="https://www.youtube.com/@yourchannel" target="_blank" aria-label="YouTube" class="group">
-                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-red-600">
-                        <img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" />
-                    </div>
-                </a>
-
-                <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram" class="group">
-                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-pink-500">
-                        <img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" />
-                    </div>
-                </a>
-
-                <a href="https://www.twitter.com/yourhandle" target="_blank" aria-label="Twitter" class="group">
-                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-500">
-                        <img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter" />
-                    </div>
-                </a>
-
-                <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook" class="group">
-                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-700">
-                        <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook" />
-                    </div>
-                </a>
+        <!-- Social Icons -->
+        <div class="flex justify-center flex-wrap gap-8 mb-10">
+          <a
+            href="https://www.linkedin.com/in/your-linkedin"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="group"
+          >
+            <div
+              class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-600"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png"
+                alt="LinkedIn"
+              />
             </div>
+          </a>
 
-            <!-- Email & Phone -->
-            <div class="text-lg space-y-2 mb-10">
-                <p>
-                    📧
-                    <a href="mailto:your@email.com" class="hover:text-yellow-400 transition">your@email.com</a>
-                </p>
-                <p>
-                    📞
-                    <a href="tel:+911234567890" class="hover:text-yellow-400 transition">+91 12345 67890</a>
-                </p>
+          <a
+            href="https://www.youtube.com/@yourchannel"
+            target="_blank"
+            aria-label="YouTube"
+            class="group"
+          >
+            <div
+              class="p-3 rounded-full transition bg-transparent group-hover:bg-red-600"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png"
+                alt="YouTube"
+              />
             </div>
+          </a>
 
-            <!-- Copyright -->
-            <p class="text-sm text-gray-400">
-                &copy; 2025 Purvesh Choudhary. All rights reserved.
-            </p>
+          <a
+            href="https://www.instagram.com/yourprofile"
+            target="_blank"
+            aria-label="Instagram"
+            class="group"
+          >
+            <div
+              class="p-3 rounded-full transition bg-transparent group-hover:bg-pink-500"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png"
+                alt="Instagram"
+              />
+            </div>
+          </a>
+
+          <a
+            href="https://www.twitter.com/yourhandle"
+            target="_blank"
+            aria-label="Twitter"
+            class="group"
+          >
+            <div
+              class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-500"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png"
+                alt="Twitter"
+              />
+            </div>
+          </a>
+
+          <a
+            href="https://www.facebook.com/yourprofile"
+            target="_blank"
+            aria-label="Facebook"
+            class="group"
+          >
+            <div
+              class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-700"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png"
+                alt="Facebook"
+              />
+            </div>
+          </a>
         </div>
+
+        <!-- Email & Phone -->
+        <div class="text-lg space-y-2 mb-10">
+          <p>
+            📧
+            <a
+              href="mailto:your@email.com"
+              class="hover:text-yellow-400 transition"
+              >your@email.com</a
+            >
+          </p>
+          <p>
+            📞
+            <a href="tel:+911234567890" class="hover:text-yellow-400 transition"
+              >+91 12345 67890</a
+            >
+          </p>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-sm text-gray-400">
+          &copy; 2025 Purvesh Choudhary. All rights reserved.
+        </p>
+      </div>
     </section>
 
     <!-- ----------------  SCRIPTS SECTION ------------------ -->
 
+    
+
+    <!-- Game Section Script -->
+    <script>
+      fetch("games.json")
+        .then((res) => res.json())
+        .then((games) => {
+          const container = document.getElementById("gamesContainer");
+          games.forEach((game) => {
+            container.innerHTML += `
+        <a href="${game.link}" target="_blank" class="relative group bg-gradient-to-br from-gray-800 to-gray-950 rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-1 hover:shadow-${game.shadowColor} transition duration-300">
+          <img src="${game.image1}" alt="${game.title}" class="w-full h-52 object-cover opacity-90 group-hover:opacity-50 transition duration-300">
+          <img src="${game.image2}" alt="${game.title} Hover" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500 z-0" />
+          <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-black/30 p-4 z-10">
+            <h3 class="text-xl font-bold text-${game.color}">${game.title}</h3>
+            <p class="text-xs text-gray-300 mb-1">${game.genre}</p>
+            <p class="text-sm text-white leading-tight">${game.desc}</p>
+          </div>
+          <div class="absolute top-3 right-3 z-10">
+            <span class="bg-${game.color} text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md hover:bg-${game.hoverColor} transition">▶ Play Now</span>
+          </div>
+        </a>`;
+          });
+        });
+    </script>
+
     <!-- 3D Gallery Script -->
     <script>
-        const imageFolder = "Images/3D/";
-        const totalImages = 7;
-        const gallery = document.getElementById("threeDGallery");
+      const imageFolder = "Images/3D/";
+      const totalImages = 7;
+      const gallery = document.getElementById("threeDGallery");
 
-        for (let i = 1; i <= totalImages; i++) {
-            const card = document.createElement("div");
-            card.className =
-                "bg-white shadow-md rounded-2xl overflow-hidden flex flex-col";
+      for (let i = 1; i <= totalImages; i++) {
+        const card = document.createElement("div");
+        card.className =
+          "bg-white shadow-md rounded-2xl overflow-hidden flex flex-col";
 
-            card.innerHTML = `
+        card.innerHTML = `
           <div class="relative group h-64">
             <img
               src="${imageFolder}(${i}).png"
@@ -292,9 +436,43 @@
           </div>
         `;
 
-            gallery.appendChild(card);
-        }
+        gallery.appendChild(card);
+      }
     </script>
-</body>
 
+    <!-- UI Gallery Script -->
+<script>
+  const uiImageFolder = "Images/UI/ ";
+  const uiImageCount = 6; // Change this based on how many images you have
+  const uiGallery = document.getElementById("uiGallery");
+
+  for (let i = 1; i <= uiImageCount; i++) {
+    const card = document.createElement("div");
+    card.className =
+      "bg-white shadow-md rounded-2xl overflow-hidden flex flex-col";
+
+    card.innerHTML = `
+      <div class="relative group h-64">
+        <img
+          src="${uiImageFolder}(${i}).png"
+          alt="UI Screenshot ${i}"
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <a
+            href="${uiImageFolder}(${i}).png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm px-4 py-2 rounded bg-primary text-dark hover:bg-secondary hover:text-primary transition font-medium"
+          >
+            View Full
+          </a>
+        </div>
+      </div>
+    `;
+    uiGallery.appendChild(card);
+  }
+</script>
+
+  </body>
 </html>
