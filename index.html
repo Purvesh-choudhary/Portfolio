@@ -1,694 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RCK DIGITEX</title>
+    <title>Purvesh Choudhary | Unity Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 
-    <!-- Google Font: Roboto -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
- <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Tailwind CSS with Roboto font configured -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Roboto", "sans-serif"],
-            },
-            colors: {
-              primary: "#7e22ce",
-              secondary: "#ec4899",
-              accent: "#3b82f6",
-            },
-          },
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-      defer
-    ></script>
-
+    <!-- Global Theme Variables -->
     <style>
-      .bg-sticky {
-        background: linear-gradient(to right, #000000, #0c0c0c, #000000);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
+        :root {
+            --primary-color: #facc15;
+            /* yellow-400 */
+            --secondary-color: #000000;
+            --text-light: #ffffff;
+            --text-dark: #000000;
+            --bg-light: #f7f7f7;
+            --bg-dark: #1f2937;
+        }
 
-      .menubar-color {
-        color: rgb(255, 255, 255);
-      }
-      /* #header {
-  position: relative;
-  z-index: 50;
-} */
+        .bg-primary {
+            background-color: var(--primary-color);
+        }
 
-.nav-link.active {
-  color: #facc15; /* text-yellow-300 */
-  font-weight: 600;
-}
+        .bg-secondary {
+            background-color: var(--secondary-color);
+        }
 
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .bg-dark {
+            background-color: var(--bg-dark);
+        }
+
+        .text-primary {
+            color: var(--primary-color);
+        }
+
+        .text-dark {
+            color: var(--text-dark);
+        }
+
+        .text-light {
+            color: var(--text-light);
+        }
+
+        .border-primary {
+            border-color: var(--primary-color);
+        }
+
+        .hover\:bg-primary:hover {
+            background-color: var(--primary-color);
+        }
+
+        .hover\:bg-secondary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .hover\:text-primary:hover {
+            color: var(--primary-color);
+        }
+
+        .hover\:text-dark:hover {
+            color: var(--text-dark);
+        }
     </style>
-  </head>
-  <body class="bg-black font-sans">
- 
+</head>
 
-
-      <!-- ✅ Reusable Header -->
-  <div id="header" ></div>
-
-
-
-    <!-- siding about us Section -->
-    <section class="relative w-full h-screen overflow-hidden"  data-aos="fade-up">
-      <!-- BACKGROUND SLIDER -->
-      <div class="absolute inset-0 -z-10">
-        <div class="w-full h-3/2 overflow-hidden">
-          <div
-            id="portfolio-slider"
-            class="flex transition-transform duration-[3000ms] ease-in-out h-full w-[500%]"
-          >
-            <!-- Slide 1 -->
-            <div class="w-full h-full flex-shrink-0">
-              <img
-                src="Images/Projects/Project1_Bg.png"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <!-- Slide 2 -->
-            <div class="w-full h-full flex-shrink-0">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <!-- Slide 3 -->
-            <div class="w-full h-full flex-shrink-0">
-              <img
-                src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <!-- Slide 4 -->
-            <div class="w-full h-full flex-shrink-0">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <!-- Slide 5 -->
-            <div class="w-full h-full flex-shrink-0">
-              <img
-                src="https://images.unsplash.com/photo-1602526219333-dfbc01e9e229?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-        <!-- Optional: dark overlay -->
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      </div>
-
-      <!-- MAIN CONTENT ABOVE -->
-      <div class="text-center mt-4 px-4 relative z-10">
-        <!-- Banner & About -->
-        <div class="max-w-7xl mx-auto">
-          <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 w-full">
-              <img
-                src="Images/banner_image.jpg"
-                alt="Banner"
-                class="rounded-lg w-full h-auto object-cover"
-              />
-            </div>
-            <!-- <div class="md:w-1/2 bg-white rounded-lg shadow-lg p-10 text-left"> -->
-            <div class="md:w-1/2 p-4 text-left">
-              <h2 class="text-6xl font-bold text-white mb-4">
-                The Power Behind Your  <span class="text-yellow-300">Online Presence</span>
-              </h2>
-
-              <p class="text-white  leading-relaxed mb-4 text-justify">
-          Welcome to RCK DIGITEX — your all-in-one partner for websites, apps, content, and digital marketing.
-We help businesses of all sizes build strong online identities through strategic design, development, and digital campaigns.
-Our team of creators, coders, and marketers is passionate about building user-first solutions that drive results.
-Whether you need a stunning portfolio, a powerful eCommerce platform, or viral content — we’ve got you covered.
-
-              </p>
-              <button
-                class="inline-block px-6 py-2 text-sm font-medium text-black bg-white rounded-lg hover:text-black hover:bg-yellow-300 transition"
-                >
-                Download Resume
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- JS Slider Logic -->
-      <script>
-        const slider = document.getElementById("portfolio-slider");
-        let currentSlide = 0;
-        const totalSlides = slider.children.length;
-
-        setInterval(() => {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }, 6000); // 3s view + 3s transition
-      </script>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-20 bg-white relative overflow-hidden" data-aos="zoom-in" >
-      <!-- Optional subtle background pattern -->
-      <div
-        class="absolute inset-0 opacity-5 bg-[url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png')] bg-repeat z-0"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-        <!-- Section Heading -->
-        <h2 class="text-6xl font-bold mb-4">
-          <span class="text-black"> </span>Our<span class="text-yellow-300">
-            Service</span
-          >
-        </h2>
-        <p class="text-gray-700 mb-12 max-w-2xl mx-auto">
-          We craft digital experiences that engage and convert—helping you build
-          your brand with design, technology, and marketing.
+<body class="bg-light text-dark">
+    <!-- Hero Section -->
+    <section class="h-screen bg-secondary text-light flex flex-col justify-center items-center text-center px-4">
+        <img src="Images/Profile.jpg" alt="Purvesh Choudhary"
+            class="w-60 h-60 rounded-full object-cover mb-6 border-4 border-primary shadow-lg" />
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">Purvesh Choudhary</h1>
+        <p class="text-xl md:text-2xl mb-6">
+            Game Developer | 3D Artist | UI Designer
         </p>
-
-        <!-- Services Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Service Card 1 -->
-          <div 
-            class="bg-white max-w-sm mx-auto p-6 rounded-2xl shadow hover:shadow-yellow-300 transition-transform duration-300 transform hover:-translate-y-2 border border-gray-200"
-          >
-            <div class="mb-4">
-              <img
-                src="Images/web-development.png"
-                alt="Web Development"
-                class="w-10 h-10 mx-auto"
-              />
-            </div>
-            <h3 class="text-xl font-bold text-black mb-2">Web Development</h3>
-            <p class="text-gray-700 text-sm mb-4">
-              Fast, responsive websites using modern tools: HTML, CSS,
-              JavaScript, React, Node.js, and more.
-            </p>
-            <a
-               href="services.html?service=web-development"
-              class="inline-block mt-4 text-sm px-5 py-2 text-black bg-yellow-300 hover:bg-black hover:text-yellow-300 rounded-full transition"
-            >
-              Find Out More
-            </a>
-          </div>
-
-          <!-- Service Card 2 -->
-          <div 
-            class="bg-white max-w-sm mx-auto p-6 rounded-2xl shadow hover:shadow-yellow-300 transition-transform duration-300 transform hover:-translate-y-2 border border-gray-200"
-          >
-            <div class="mb-4">
-              <img
-                src="Images/user-experience.png"
-                alt="UI/UX Design"
-                class="w-10 h-10 mx-auto"
-              />
-            </div>
-            <h3 class="text-xl font-bold text-black mb-2">UI/UX Design</h3>
-            <p class="text-gray-700 text-sm mb-4">
-              Clean, user-friendly interfaces with a focus on experience,
-              accessibility, and visual design.
-            </p>
-            <a
-              href="services.html?service=ui-ux-design"
-              class="inline-block mt-4 text-sm px-5 py-2 text-black bg-yellow-300 hover:bg-black hover:text-yellow-300 rounded-full transition"
-            >
-              Find Out More
-            </a>
-          </div>
-
-          <!-- Service Card 3 -->
-          <div 
-            class="bg-white max-w-sm mx-auto p-6 rounded-2xl shadow hover:shadow-yellow-300 transition-transform duration-300 transform hover:-translate-y-2 border border-gray-200"
-          >
-            <div class="mb-4">
-              <img
-                src="Images/mobile-app.png"
-                alt="Application Development"
-                class="w-10 h-10 mx-auto"
-              />
-            </div>
-            <h3 class="text-xl font-bold text-black mb-2">
-              Android Development
-            </h3>
-            <p class="text-gray-700 text-sm mb-4">
-              Scalable Android apps with elegant UIs and robust performance
-              tailored to your needs.
-            </p>
-            <a
-            href="services.html?service=application-development"
-              class="inline-block mt-4 text-sm px-5 py-2 text-black bg-yellow-300 hover:bg-black hover:text-yellow-300 rounded-full transition"
-            >
-              Find Out More
-            </a>
-          </div>
-
-          <!-- Service Card 4 -->
-          <div 
-            class="bg-white max-w-sm mx-auto p-6 rounded-2xl shadow hover:shadow-yellow-300 transition-transform duration-300 transform hover:-translate-y-2 border border-gray-200"
-          >
-            <div class="mb-4">
-              <img
-                src="Images/graphic-design.png"
-                alt="Graphics Design"
-                class="w-10 h-10 mx-auto"
-              />
-            </div>
-            <h3 class="text-xl font-bold text-black mb-2">Graphics Design</h3>
-            <p class="text-gray-700 text-sm mb-4">
-              Stunning graphics, logos, banners, and social creatives that speak
-              your brand's language.
-            </p>
-            <a
-             href="services.html?service=graphics-design"
-              class="inline-block mt-4 text-sm px-5 py-2 text-black bg-yellow-300 hover:bg-black hover:text-yellow-300 rounded-full transition"
-            >
-              Find Out More
-            </a>
-          </div>
-
-          <!-- Service Card 5 -->
-          <div 
-            class="bg-white max-w-sm mx-auto p-6 rounded-2xl shadow hover:shadow-yellow-300 transition-transform duration-300 transform hover:-translate-y-2 border border-gray-200"
-          >
-            <div class="mb-4">
-              <img
-                src="Images/3d.png"
-                alt="Game Development"
-                class="w-10 h-10 mx-auto"
-              />
-            </div>
-            <h3 class="text-xl font-bold text-black mb-2">Game Development</h3>
-            <p class="text-gray-700 text-sm mb-4">
-              Realistic 3D models, animations, and VFX for games, ads, or visual
-              presentations.
-            </p>
-            <a
-                 href="services.html?service=game-development"
-              class="inline-block mt-4 text-sm px-5 py-2 text-black bg-yellow-300 hover:bg-black hover:text-yellow-300 rounded-full transition"
-            >
-              Find Out More
-            </a>
-          </div>
-
-          <!-- Service Card 6 -->
-          <div 
-            class="bg-white max-w-sm mx-auto p-6 rounded-2xl shadow hover:shadow-yellow-300 transition-transform duration-300 transform hover:-translate-y-2 border border-gray-200"
-          >
-            <div class="mb-4">
-              <img
-                src="Images/content-marketing.png"
-                alt="Digital Marketing"
-                class="w-10 h-10 mx-auto"
-              />
-            </div>
-            <h3 class="text-xl font-bold text-black mb-2">Digital Marketing</h3>
-            <p class="text-gray-700 text-sm mb-4">
-              SEO, ads, email campaigns, and social media marketing that
-              generate real business results.
-            </p>
-            <a
-               href="services.html?service=digital-marketing"
-              class="inline-block mt-4 text-sm px-5 py-2 text-black bg-yellow-300 hover:bg-black hover:text-yellow-300 rounded-full transition"
-            >
-              Find Out More
-            </a>
-          </div>
+        <div class="space-x-4">
+            <a href="#games"
+                class="bg-primary text-dark px-6 py-2 rounded hover:bg-secondary hover:text-primary transition">🎮 View
+                My Games</a>
+            <a href="#contact"
+                class="border border-primary px-6 py-2 rounded hover:bg-primary hover:text-dark transition">📩 Hire
+                Me</a>
         </div>
-      </div>
     </section>
 
-    <!-- 🚀 Projects Section -->
-    <section
-      id="portfolio-fade"
-      class="relative w-full overflow-hidden bg-white text-black" data-aos="fade-up"
-    >
-      <!-- Heading -->
-      <div class="max-w-7xl mx-auto px-4 text-center z-10 relative">
-        <h2 class="text-6xl font-bold mb-4">
-          <span class="text-black"> </span>Port<span class="text-yellow-300"
-            >folio</span
-          >
-        </h2>
-        <p class="text-gray-700 mb-12 max-w-2xl mx-auto">
-    Explore our handpicked projects that blend creativity, strategy, and technology — designed to elevate brands and deliver real results.
-        </p>
-      </div>
-
-      <!-- Slider Area -->
-      <div class="relative h-[80vh] group z-0">
-        <div id="slider2" class="relative w-full h-full">
-          <!-- Slide 1 -->
-          <div
-            class="absolute inset-0 transition-opacity duration-[3000ms] ease-in-out opacity-100 slide2"
-          >
-            <img
-              src="Images/Projects/Project1_Bg.png"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- Slide 2 -->
-          <div
-            class="absolute inset-0 transition-opacity duration-[3000ms] ease-in-out opacity-0 slide2"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- Slide 3 -->
-          <div
-            class="absolute inset-0 transition-opacity duration-[3000ms] ease-in-out opacity-0 slide2"
-          >
-            <img
-              src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f"
-              class="w-full h-full object-cover"
-            />
-          </div>
+    <!-- About Section -->
+    <section class="py-16 bg-white" id="about">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">About Me</h2>
+            <p class="text-lg text-gray-700">
+                I'm a Unity Developer with a passion for creating immersive games,
+                designing engaging UI, and building beautiful 3D art. I started my
+                journey with Blender and evolved into full game development. I love
+                storytelling through code and pixels.
+            </p>
         </div>
-
-        <!-- Dot Indicators -->
-        <div
-          class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-3 z-10"
-        >
-          <button
-            class="w-4 h-4 rounded-full bg-yellow-300 opacity-80 hover:opacity-100 dot2"
-            data-slide="0"
-          ></button>
-          <button
-            class="w-4 h-4 rounded-full bg-yellow-300 opacity-80 hover:opacity-100 dot2"
-            data-slide="1"
-          ></button>
-          <button
-            class="w-4 h-4 rounded-full bg-yellow-300 opacity-80 hover:opacity-100 dot2"
-            data-slide="2"
-          ></button>
-        </div>
-
-        <!-- Arrows -->
-        <button
-          id="prevBtn2"
-          class="absolute left-4 top-1/2 -translate-y-1/2 text-yellow-300 bg-black/30 hover:bg-black/60 rounded-full w-10 h-10 flex items-center justify-center z-10"
-        >
-          ‹
-        </button>
-        <button
-          id="nextBtn2"
-          class="absolute right-4 top-1/2 -translate-y-1/2 text-yellow-300 bg-black/30 hover:bg-black/60 rounded-full w-10 h-10 flex items-center justify-center z-10"
-        >
-          ›
-        </button>
-      </div>
     </section>
 
-    <!-- Projects script -->
+    <!-- Skills Section -->
+    <section class="py-16 bg-gray-100" id="skills">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-10">Skills & Tools</h2>
+            <div class="flex flex-wrap justify-center items-center gap-6">
+                <!-- Unity -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="https://img.icons8.com/color/48/unity.png" alt="Unity" class="w-10 h-10 mb-1" />
+                    <span class="text-sm text-center">Unity</span>
+                </div>
+                <!-- Blender -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="https://img.icons8.com/color/48/blender-3d.png" alt="Blender" class="w-10 h-10 mb-1" />
+                    <span class="text-sm text-center">Blender</span>
+                </div>
+                <!-- C# -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="https://img.icons8.com/color/48/c-sharp-logo.png" alt="C#" class="w-10 h-10 mb-1" />
+                    <span class="text-sm text-center">C#</span>
+                </div>
+                <!-- Photoshop -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop"
+                        class="w-10 h-10 mb-1" />
+                    <span class="text-sm text-center">Photoshop</span>
+                </div>
+                <!-- Figma -->
+                <!-- <div class="flex flex-col items-center w-20">
+        <img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma" class="w-10 h-10 mb-1" />
+        <span class="text-sm text-center">Figma</span>
+      </div> -->
+                <!-- HTML -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML" class="w-10 h-10 mb-1" />
+                    <span class="text-sm text-center">HTML</span>
+                </div>
+                <!-- CSS -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="https://img.icons8.com/color/48/css3.png" alt="CSS" class="w-10 h-10 mb-1" />
+                    <span class="text-sm text-center">CSS</span>
+                </div>
+                <!-- JavaScript -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"
+                        class="w-10 h-10 mb-1" />
+                    <span class="text-sm text-center">JavaScript</span>
+                </div>
+                <!-- Git -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="https://img.icons8.com/color/48/git.png" alt="Git" class="w-10 h-10 mb-1" />
+                    <span class="text-sm text-center">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Projects Section -->
+    <section class="py-16 bg-white" id="games">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-10">Game Projects</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-light p-4 rounded-xl shadow">
+                    <img src="Images/Games/sample-game.png" alt="Game Screenshot" class="rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold mb-2">Chicken of the Wild</h3>
+                    <p class="text-sm text-gray-600">
+                        A stealth-comedy escape game made in 7 days. Full of feathers and
+                        chaos.
+                    </p>
+                    <a href="#" class="text-primary hover:underline mt-2 inline-block">▶️ Play Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Art Gallery -->
+    <section class="py-16 bg-light" id="gallery">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-10">3D Works</h2>
+            <div id="threeDGallery" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- JS injects cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Game UI & Animation -->
+    <section class="py-16 bg-white" id="ui-animation">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-10">
+                Game UI & Animation
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-light p-4 rounded-xl shadow">
+                    <img src="Images/UI/ui-sample.png" alt="UI Screenshot" class="rounded-md mb-2" />
+                    <p class="text-sm text-gray-600">
+                        Inventory UI design for a pixel RPG.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-black text-white" id="contact">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-10">Let's Connect</h2>
+
+            <!-- Social Icons -->
+            <div class="flex justify-center flex-wrap gap-8 mb-10">
+                <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" aria-label="LinkedIn" class="group">
+                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-600">
+                        <img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn" />
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/@yourchannel" target="_blank" aria-label="YouTube" class="group">
+                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-red-600">
+                        <img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" />
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram" class="group">
+                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-pink-500">
+                        <img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" />
+                    </div>
+                </a>
+
+                <a href="https://www.twitter.com/yourhandle" target="_blank" aria-label="Twitter" class="group">
+                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-500">
+                        <img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter" />
+                    </div>
+                </a>
+
+                <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook" class="group">
+                    <div class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-700">
+                        <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook" />
+                    </div>
+                </a>
+            </div>
+
+            <!-- Email & Phone -->
+            <div class="text-lg space-y-2 mb-10">
+                <p>
+                    📧
+                    <a href="mailto:your@email.com" class="hover:text-yellow-400 transition">your@email.com</a>
+                </p>
+                <p>
+                    📞
+                    <a href="tel:+911234567890" class="hover:text-yellow-400 transition">+91 12345 67890</a>
+                </p>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-sm text-gray-400">
+                &copy; 2025 Purvesh Choudhary. All rights reserved.
+            </p>
+        </div>
+    </section>
+
+    <!-- ----------------  SCRIPTS SECTION ------------------ -->
+
+    <!-- 3D Gallery Script -->
     <script>
-      const slides2 = document.querySelectorAll(".slide2");
-      const dots2 = document.querySelectorAll(".dot2");
-      const slider2 = document.getElementById("slider2");
-      let currentSlide2 = 0;
-      let interval2;
+        const imageFolder = "Images/3D/";
+        const totalImages = 7;
+        const gallery = document.getElementById("threeDGallery");
 
-      function showSlide2(index) {
-        slides2.forEach((slide, i) => {
-          slide.style.opacity = i === index ? "1" : "0";
-        });
-        dots2.forEach((dot) => dot.classList.remove("bg-yellow-100"));
-        dots2[index].classList.add("bg-yellow-100");
-      }
+        for (let i = 1; i <= totalImages; i++) {
+            const card = document.createElement("div");
+            card.className =
+                "bg-white shadow-md rounded-2xl overflow-hidden flex flex-col";
 
-      function nextSlide2() {
-        currentSlide2 = (currentSlide2 + 1) % slides2.length;
-        showSlide2(currentSlide2);
-      }
-
-      function startSlider2() {
-        interval2 = setInterval(nextSlide2, 3000); // 3 seconds
-      }
-
-      function stopSlider2() {
-        clearInterval(interval2);
-      }
-
-      // Hover to pause
-      slider2.addEventListener("mouseenter", stopSlider2);
-      slider2.addEventListener("mouseleave", startSlider2);
-
-      // Manual controls
-      document.getElementById("prevBtn2").addEventListener("click", () => {
-        currentSlide2 = (currentSlide2 - 1 + slides2.length) % slides2.length;
-        showSlide2(currentSlide2);
-      });
-
-      document.getElementById("nextBtn2").addEventListener("click", () => {
-        currentSlide2 = (currentSlide2 + 1) % slides2.length;
-        showSlide2(currentSlide2);
-      });
-
-      dots2.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          currentSlide2 = parseInt(dot.dataset.slide);
-          showSlide2(currentSlide2);
-        });
-      });
-
-      // Start initially
-      showSlide2(currentSlide2);
-      startSlider2();
-    </script>
-
-    <!-- 🌟 Why Choose Us Section - Final Version with Right-Aligned Left Column -->
-    <section class="bg-white py-20 " data-aos="fade-up">
-      <div class="max-w-7xl mx-auto px-4">
-        <!-- Heading -->
-        <h2 class="text-6xl font-bold text-center mb-16 text-black">
-          Why <span class="text-yellow-300">Us?</span>
-        </h2>
-
-        <!-- Main Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-          <!-- ✅ Left Column - Right-Aligned Boxes -->
-          <div class="space-y-6 pr-2 text-right">
-            <div
-              class="p-5 border-r-4 border-yellow-300 bg-white shadow-lg rounded-2xl hover:scale-[1.02] transition duration-300"
-            >
-              <h3 class="text-lg font-semibold text-black">
-                End-to-End Project Support
-              </h3>
-              <p class="text-gray-700 text-sm mt-1">
-                We guide you from idea validation to deployment. Your vision
-                becomes a real product with us.
-              </p>
-            </div>
-            <div
-              class="p-5 border-r-4 border-yellow-300 bg-white shadow-lg rounded-2xl hover:scale-[1.02] transition duration-300"
-            >
-              <h3 class="text-lg font-semibold text-black">
-                Scalable Teams On-Demand
-              </h3>
-              <p class="text-gray-700 text-sm mt-1">
-                Flexibility to scale your team as per project needs — hourly,
-                fixed, or dedicated.
-              </p>
-            </div>
-            <div
-              class="p-5 border-r-4 border-yellow-300 bg-white shadow-lg rounded-2xl hover:scale-[1.02] transition duration-300"
-            >
-              <h3 class="text-lg font-semibold text-black">
-                Cutting-Edge Tech Stack
-              </h3>
-              <p class="text-gray-700 text-sm mt-1">
-                From React to Three.js, we use future-ready, modern and secure
-                technologies.
-              </p>
-            </div>
-          </div>
-
-          <!-- 🖼️ Center Image -->
-          <div class="flex justify-center items-center mt-8">
+            card.innerHTML = `
+          <div class="relative group h-64">
             <img
-              src="Images/confused-man2.jpg"
-              alt="Technology Partner"
-              class="w-56 md:w-64 hover:scale-105 transition duration-300"
+              src="${imageFolder}(${i}).png"
+              alt="3D Screenshot ${i}"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
-          </div>
-
-          <!-- ✅ Right Column - Left-Aligned Boxes (Default) -->
-          <div class="space-y-6 pl-2">
-            <div
-              class="p-5 border-l-4 border-yellow-300 bg-white shadow-lg rounded-2xl hover:scale-[1.02] transition duration-300"
-            >
-              <h3 class="text-lg font-semibold text-black">
-                Lightning-Fast Delivery
-              </h3>
-              <p class="text-gray-700 text-sm mt-1">
-                Fast MVPs without quality compromise. We keep everything agile
-                and lean.
-              </p>
-            </div>
-            <div
-              class="p-5 border-l-4 border-yellow-300 bg-white shadow-lg rounded-2xl hover:scale-[1.02] transition duration-300"
-            >
-              <h3 class="text-lg font-semibold text-black">
-                Tailored & Transparent Pricing
-              </h3>
-              <p class="text-gray-700 text-sm mt-1">
-                Clear pricing plans, no hidden fees. Built around your budget
-                and goals.
-              </p>
-            </div>
-            <div
-              class="p-5 border-l-4 border-yellow-300 bg-white shadow-lg rounded-2xl hover:scale-[1.02] transition duration-300"
-            >
-              <h3 class="text-lg font-semibold text-black">
-                Proven Experience
-              </h3>
-              <p class="text-gray-700 text-sm mt-1">
-                50+ projects delivered with real-world business impact and
-                creative results.
-              </p>
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a
+                href="${imageFolder}(${i}).png"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm px-4 py-2 rounded bg-primary text-dark hover:bg-secondary hover:text-primary transition font-medium"
+              >
+                Preview
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        `;
 
-
-
-    <!-- SwiperJS CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- 💬 Testimonials Section (Themed) -->
-    <section class="bg-white py-20" data-aos="fade-up">
-      <div class="max-w-5xl mx-auto px-6 text-center">
-        <!-- Heading -->
-        <h2 class="text-6xl font-bold text-black mb-4">
-          What <span class="text-yellow-300">Our Clients</span> Say
-        </h2>
-        <p class="text-gray-700 mb-10 max-w-2xl mx-auto">
-          We are proud to serve happy clients from various industries. Here's
-          what they say about working with us.
-        </p>
-
-        <!-- Swiper Container -->
-        <div class="swiper testimonials-swiper">
-          <div class="swiper-wrapper">
-            <!-- ⭐ Slide 1 -->
-            <div
-              class="swiper-slide bg-white p-6 border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
-            >
-              <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
-                class="w-16 h-16 rounded-full mx-auto mb-4 border-4 border-yellow-200"
-                alt="Client 1"
-              />
-              <h3 class="text-xl font-semibold text-black">Rahul Sharma</h3>
-              <p class="text-sm text-gray-500 mb-3">Founder, PixelCraft</p>
-              <p class="text-gray-700 text-sm">
-                “Their UI/UX design and development expertise helped us launch
-                our platform faster than expected. Amazing work!”
-              </p>
-            </div>
-
-            <!-- ⭐ Slide 2 -->
-            <div
-              class="swiper-slide bg-white p-6 border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
-            >
-              <img
-                src="https://randomuser.me/api/portraits/women/45.jpg"
-                class="w-16 h-16 rounded-full mx-auto mb-4 border-4 border-yellow-200"
-                alt="Client 2"
-              />
-              <h3 class="text-xl font-semibold text-black">Ankita Desai</h3>
-              <p class="text-sm text-gray-500 mb-3">
-                Marketing Head, BrandBoost
-              </p>
-              <p class="text-gray-700 text-sm">
-                “Their digital marketing strategy gave our business a strong
-                online presence. Truly reliable and professional team.”
-              </p>
-            </div>
-
-            <!-- ⭐ Slide 3 -->
-            <div
-              class="swiper-slide bg-white p-6 border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
-            >
-              <img
-                src="https://randomuser.me/api/portraits/men/76.jpg"
-                class="w-16 h-16 rounded-full mx-auto mb-4 border-4 border-yellow-200"
-                alt="Client 3"
-              />
-              <h3 class="text-xl font-semibold text-black">Vikram Patel</h3>
-              <p class="text-sm text-gray-500 mb-3">CEO, RenderZone</p>
-              <p class="text-gray-700 text-sm">
-                “From website development to 3D animation — they nailed every
-                aspect of our product launch. Highly recommended.”
-              </p>
-            </div>
-          </div>
-
-          <!-- Swiper Pagination -->
-          <div class="swiper-pagination mt-6"></div>
-        </div>
-      </div>
-    </section>
-
- 
-
-    <script>
-      new Swiper(".testimonials-swiper", {
-        loop: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        speed: 1000,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        effect: "slide",
-        grabCursor: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-      });
+            gallery.appendChild(card);
+        }
     </script>
+</body>
 
-  
-  <!-- Footer Code -->
-  <div id="footer"></div>
-
- 
-  
-    <script src="/include.js"></script>
-
-     <!-- AOS Init Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
-  </body>
 </html>
