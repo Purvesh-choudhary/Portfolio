@@ -232,37 +232,18 @@
       </div>
     </section>
 
-    <!-- Game UI & Animation -->
-    <section class="py-16 bg-white" id="ui-animation">
+    <!-- UI Design Section -->
+    <section class="py-16 bg-light" id="gallery">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-10">
-          Game UI & Animation
-        </h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-light p-4 rounded-xl shadow">
-            <img
-              src="Images/UI/ui-sample.png"
-              alt="UI Screenshot"
-              class="rounded-md mb-2"
-            />
-            <p class="text-sm text-gray-600">
-              Inventory UI design for a pixel RPG.
-            </p>
-          </div>
+        <h2 class="text-4xl font-bold text-center mb-10">UI Works</h2>
+        <div
+          id="uiGallery"
+          class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <!-- JS injects cards -->
         </div>
       </div>
     </section>
-
-    <!-- Game UI Gallery -->
-<section class="py-16 bg-gray-100" id="ui-gallery">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-10">Game UI & UX Designs</h2>
-    <div id="uiGallery" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- JS Injected Cards -->
-    </div>
-  </div>
-</section>
-
 
     <!-- Contact Section -->
     <section class="py-16 bg-black text-white" id="contact">
@@ -379,8 +360,6 @@
 
     <!-- ----------------  SCRIPTS SECTION ------------------ -->
 
-    
-
     <!-- Game Section Script -->
     <script>
       fetch("games.json")
@@ -441,38 +420,38 @@
     </script>
 
     <!-- UI Gallery Script -->
-<script>
-  const uiImageFolder = "Images/UI/ ";
-  const uiImageCount = 6; // Change this based on how many images you have
-  const uiGallery = document.getElementById("uiGallery");
+    <script>
+      const uiimageFolder = "Images/UI/ ";
+      const uitotalImages = 7;
+      const uigallery = document.getElementById("uiGallery");
 
-  for (let i = 1; i <= uiImageCount; i++) {
-    const card = document.createElement("div");
-    card.className =
-      "bg-white shadow-md rounded-2xl overflow-hidden flex flex-col";
+      for (let i = 1; i <= uitotalImages; i++) {
+        const card = document.createElement("div");
+        card.className =
+          "bg-white shadow-md rounded-2xl overflow-hidden flex flex-col";
 
-    card.innerHTML = `
-      <div class="relative group h-64">
-        <img
-          src="${uiImageFolder}(${i}).png"
-          alt="UI Screenshot ${i}"
-          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <a
-            href="${uiImageFolder}(${i}).png"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sm px-4 py-2 rounded bg-primary text-dark hover:bg-secondary hover:text-primary transition font-medium"
-          >
-            View Full
-          </a>
-        </div>
-      </div>
-    `;
-    uiGallery.appendChild(card);
-  }
-</script>
+        card.innerHTML = `
+          <div class="relative group h-64">
+            <img
+              src="${uiimageFolder}(${i}).png"
+              alt="3D Screenshot ${i}"
+              class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a
+                href="${uiimageFolder}(${i}).png"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm px-4 py-2 rounded bg-primary text-dark hover:bg-secondary hover:text-primary transition font-medium"
+              >
+                Preview
+              </a>
+            </div>
+          </div>
+        `;
 
+        uigallery.appendChild(card);
+      }
+    </script>
   </body>
 </html>
