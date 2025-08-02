@@ -236,10 +236,7 @@
     <section class="py-16 bg-light" id="gallery">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-4xl font-bold text-center mb-10">UI Works</h2>
-        <div
-          id="uiGallery"
-          class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        <div id="uiGallery" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- JS injects cards -->
         </div>
       </div>
@@ -253,7 +250,7 @@
         <!-- Social Icons -->
         <div class="flex justify-center flex-wrap gap-8 mb-10">
           <a
-            href="https://www.linkedin.com/in/your-linkedin"
+            href="https://www.linkedin.com/in/purvesh-choudhary/"
             target="_blank"
             aria-label="LinkedIn"
             class="group"
@@ -269,7 +266,7 @@
           </a>
 
           <a
-            href="https://www.youtube.com/@yourchannel"
+            href="https://www.youtube.com/c/GameDevPurvesh"
             target="_blank"
             aria-label="YouTube"
             class="group"
@@ -285,7 +282,7 @@
           </a>
 
           <a
-            href="https://www.instagram.com/yourprofile"
+            href="https://www.instagram.com/purveshchoudhary/"
             target="_blank"
             aria-label="Instagram"
             class="group"
@@ -301,7 +298,7 @@
           </a>
 
           <a
-            href="https://www.twitter.com/yourhandle"
+            href="https://x.com/Purvesh_chow"
             target="_blank"
             aria-label="Twitter"
             class="group"
@@ -317,16 +314,16 @@
           </a>
 
           <a
-            href="https://www.facebook.com/yourprofile"
+            href="https://github.com/Purvesh-choudhary"
             target="_blank"
             aria-label="Facebook"
             class="group"
           >
             <div
-              class="p-3 rounded-full transition bg-transparent group-hover:bg-blue-700"
+              class="p-3 rounded-full transition bg-transparent group-hover:bg-purple-700"
             >
               <img
-                src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png"
+                src="https://img.icons8.com/ios-filled/30/ffffff/github.png"
                 alt="Facebook"
               />
             </div>
@@ -338,18 +335,31 @@
           <p>
             📧
             <a
-              href="mailto:your@email.com"
+              href="mailto:purveshchoudhary99@gmail.com"
               class="hover:text-yellow-400 transition"
-              >your@email.com</a
+              >purveshchoudhary99@gmail.com</a
             >
           </p>
           <p>
             📞
-            <a href="tel:+911234567890" class="hover:text-yellow-400 transition"
-              >+91 12345 67890</a
+            <a href="tel:+916266090448" class="hover:text-yellow-400 transition"
+              >+91 6266090448</a
             >
           </p>
         </div>
+
+        <!-- Download Resume Button -->
+<div class="mb-10">
+  <a
+    href="https://drive.google.com/file/d/1tkKNErOnfyD9K5A5yWq93cXKcBvtDqki/view?usp=sharing"
+    target="_blank"
+    class="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 px-6 rounded-full transition duration-300 shadow-lg"
+    download
+  >
+    ⬇️ Download Resume
+  </a>
+</div>
+
 
         <!-- Copyright -->
         <p class="text-sm text-gray-400">
@@ -368,18 +378,30 @@
           const container = document.getElementById("gamesContainer");
           games.forEach((game) => {
             container.innerHTML += `
-        <a href="${game.link}" target="_blank" class="relative group bg-gradient-to-br from-gray-800 to-gray-950 rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-1 hover:shadow-${game.shadowColor} transition duration-300">
-          <img src="${game.image1}" alt="${game.title}" class="w-full h-52 object-cover opacity-90 group-hover:opacity-50 transition duration-300">
-          <img src="${game.image2}" alt="${game.title} Hover" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500 z-0" />
-          <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-black/30 p-4 z-10">
-            <h3 class="text-xl font-bold text-${game.color}">${game.title}</h3>
-            <p class="text-xs text-gray-300 mb-1">${game.genre}</p>
-            <p class="text-sm text-white leading-tight">${game.desc}</p>
-          </div>
-          <div class="absolute top-3 right-3 z-10">
-            <span class="bg-${game.color} text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md hover:bg-${game.hoverColor} transition">▶ Play Now</span>
-          </div>
-        </a>`;
+    <div class="relative group transform hover:-translate-y-2 transition duration-300 ease-out">
+      <div class="bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-2xl overflow-hidden border-4 border-gray-800 hover:border-yellow-500 transition">
+        
+        <a href="${game.page}">
+        <div class="relative h-64 overflow-hidden">
+          <img src="${game.image1}" alt="${game.title}" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:opacity-0 transition duration-500 z-10">
+          <img src="${game.image2}" alt="${game.title} Hover" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500 z-20">
+          <div class="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-60 transition duration-300 z-30"></div>
+        </div>
+        </a>
+
+        <div class="p-5 relative z-40 text-white">
+          <h3 class="text-xl font-extrabold tracking-wide text-yellow-400 mb-1">${game.title}</h3>
+          <p class="text-sm text-gray-300 mb-1 italic">${game.genre}</p>
+          <p class="text-sm text-gray-100 leading-tight">${game.desc}</p>
+        </div>
+        <a href="${game.link}">
+        <div class="absolute top-3 right-3 z-50">
+          <span class="bg-yellow-400 hover:bg-white text-black text-xs font-bold px-4 py-1 rounded-full shadow-lg transition duration-300">▶ Play Now</span>
+        </div>
+        </a>
+      </div>
+    </div>
+  `;
           });
         });
     </script>
@@ -422,7 +444,7 @@
     <!-- UI Gallery Script -->
     <script>
       const uiimageFolder = "Images/UI/ ";
-      const uitotalImages = 7;
+      const uitotalImages = 6;
       const uigallery = document.getElementById("uiGallery");
 
       for (let i = 1; i <= uitotalImages; i++) {

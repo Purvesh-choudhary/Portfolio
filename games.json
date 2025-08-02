@@ -8,7 +8,11 @@
     "shadowColor": "yellow-500/20",
     "image1": "Images/Games/Mars_Revive/ (1).png",
     "image2": "Images/Games/Mars_Revive/ (2).png",
-    "link": "https://gamedevpurvesh.itch.io/mars-revive"
+    "imageFolder": "Images/Games/Mars_Revive/",
+    "imageCount": 5,
+    "link": "https://gamedevpurvesh.itch.io/mars-revive",
+    "github" : "https://github.com/Purvesh-choudhary/Mars-Revive", 
+    "page": "Games/Mars_Revive.html"
   },
   {
     "title": "Shady Apartment",
@@ -19,7 +23,11 @@
     "shadowColor": "purple-500/20",
     "image1": "Images/Games/Shady_Apartment/ (1).png",
     "image2": "Images/Games/Shady_Apartment/ (2).png",
-    "link": "https://gamedevpurvesh.itch.io/shady-apartment"
+    "imageFolder": "Images/Games/Shady_Apartment/",
+    "imageCount": 8,
+    "link": "https://gamedevpurvesh.itch.io/shady-apartment",
+    "github" : "https://github.com/Purvesh-choudhary/ShadyApartment",
+    "page": "Games/Shady_Apartment.html"
   },
   {
     "title": "Patrac",
@@ -30,6 +38,25 @@
     "shadowColor": "cyan-500/20",
     "image1": "Images/Games/Patrac/ (1).png",
     "image2": "Images/Games/Patrac/ (2).png",
-    "link": "https://gamedevpurvesh.itch.io/patrac"
+    "imageFolder": "Images/Games/Patrac/",
+    "imageCount": 2,
+    "link": "https://gamedevpurvesh.itch.io/patrac",
+    "github" : "https://github.com/Purvesh-choudhary/Patrac",
+    "page": "Games/Patrac.html"
+  },
+  {
+    "title": "Octotaps",
+    "desc": "OctoTaps – Your Customizable Beat Pad!",
+    "genre": "Musical • Solo Dev",
+    "color": "cyan-400",
+    "hoverColor": "cyan-300",
+    "shadowColor": "cyan-500/20",
+    "image1": "Images/Games/Octotaps/ (1).png",
+    "image2": "Images/Games/Octotaps/ (2).png",
+    "imageFolder": "Images/Games/Octotaps/",
+    "imageCount": 4,
+    "link": "https://gamedevpurvesh.itch.io/octotaps",
+    "github" : "https://github.com/Purvesh-choudhary/Octotaps",
+    "page": "Games/Octotaps.html"
   }
 ]
