@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Octotaps | Game Detail</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <!-- Back to Home Button -->
+    <div class="flex justify-center items-center py-2">
+      <a
+        href="../index.html"
+        class="w-full max-w text-center bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-4 px-6 rounded-xl shadow-lg transition duration-300"
+      >
+        ← Back to Home
+      </a>
+    </div>
+
+    <!-- Header Video -->
+    <section class="w-full h-72 sm:h-[500px] overflow-hidden shadow-lg">
+      <iframe
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/Ac_oNBBdwkI"
+        title="Zumper Trailer"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <!-- Game Info Section -->
+    <section class="max-w-5xl mx-auto px-6 py-12">
+      <!-- Title & Description -->
+      <h1 class="text-5xl font-bold text-yellow-500 mb-4"></h1>
+      <p class="text-lg text-gray-700 leading-relaxed mb-10">
+         charming platformer built in Blender Game Engine, Zumper: The Adventure follows the story of a brave cube hero on a mission to rescue his kidnapped villagers from the clutches of the evil devil Juba. <br>
+
+🌍 Designed with a simple yet stylized world, Zumper’s journey takes players through levels filled with traps, challenges, and light combat , all created using Blender’s native game engine. This project was my creative experiment combining storytelling with level design inside Blender.
+      <!-- Details Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- Uniqueness -->
+        <div>
+          <h2 class="text-xl font-bold mb-2">🌟 Unique Features</h2>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>🎮 <strong>Platformer Gameplay:</strong> Classic jump-and-run mechanics with simple level progression.</li>
+    <li>🧠 <strong>Puzzle Elements:</strong> Navigate through traps and timed platforms to reach the end.</li>
+    <li>🦾 <strong>Enemy Encounters:</strong> Basic AI that challenges the player’s movement and timing.</li>
+    <li>📜 <strong>Light Narrative:</strong> A short story-driven setup to give purpose and motivation.</li>
+    <li>🌍 <strong>Stylized Visuals:</strong> Minimalist cube-based characters and environments.</li>
+    <li>🎯 <strong>Casual Difficulty:</strong> Designed to be accessible and easy to complete in one sitting.</li>
+
+          </ul>
+        </div>
+
+        <!-- Tools Used -->
+        <div>
+          <h2 class="text-xl font-bold mb-2">🛠️ Tools & Tech</h2>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>🧱 <strong>Blender Game Engine:</strong> Core engine used for gameplay and logic.</li>
+    <li>🎨 <strong>Blender:</strong> Modeling, animation, and level design.</li>
+    <li>🖼️ <strong>Photoshop:</strong> UI elements and texture design.</li>
+    <li>💻 <strong>Windows Build:</strong> Game exported and tested for PC.</li>
+ 
+          </ul>
+        </div>
+      </div>
+
+      <!-- Art Gallery -->
+      <div class="mb-14">
+        <h2 class="text-xl font-bold mb-4">🖼️ Art Gallery</h2>
+        <div
+          id="gallery"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
+        >
+          <!-- Images will be inserted here -->
+        </div>
+      </div>
+
+      <!-- Play & Code -->
+      <div class="flex flex-wrap justify-center gap-6 mb-14">
+        <a
+          href=""
+          target="_blank"
+          class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-md transition duration-300"
+        >
+          ▶ Play Game
+        </a>
+        <!-- <a
+          href=""
+          target="_blank"
+          class="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-full shadow-md transition duration-300"
+        >
+          🔗 Source Code on GitHub
+        </a> -->
+      </div>
+
+      <!-- Tags -->
+      <div class="mb-8">
+  <h2 class="text-xl font-bold mb-2">🏷️ Tags</h2>
+  <div class="flex flex-wrap gap-3">
+    <span class="bg-gray-200 text-sm px-4 py-1 rounded-full">Platformer</span>
+    <span class="bg-gray-200 text-sm px-4 py-1 rounded-full">Adventure</span>
+    <span class="bg-gray-200 text-sm px-4 py-1 rounded-full">Casual</span>
+    <span class="bg-gray-200 text-sm px-4 py-1 rounded-full">Blender Game Engine</span>
+    <span class="bg-gray-200 text-sm px-4 py-1 rounded-full">Indie</span>
+  </div>
+</div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="text-center py-6 text-gray-500 text-sm border-t border-gray-200"
+    >
+      &copy; 2025 Purvesh Choudhary. All rights reserved.
+    </footer>
+
+    <script src="game.js"></script>
+
+  </body>
+</html>
